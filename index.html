@@ -1,1 +1,477 @@
 
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SmartVal – Hitta rätt. Betala mindre.</title>
+  <meta
+    name="description"
+    content="SmartVal hjälper dig att jämföra produkter, abonnemang och priser för smartare köp."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="#" class="logo">
+    <span class="logo-icon">S</span>
+    SmartVal
+  </a>
+
+  <nav>
+    <a href="#kategorier">Kategorier</a>
+    <a href="#jamfor">Jämför</a>
+    <a href="#guider">Guider</a>
+  </nav>
+
+  <a href="#jamfor" class="button small">
+    Börja jämföra
+  </a>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      SMARTARE KÖP
+    </div>
+
+    <h1>
+      Hitta rätt.<br>
+      <span>Betala mindre.</span>
+    </h1>
+
+    <p>
+      Jämför produkter, abonnemang och priser på ett enkelt sätt.
+      Vi hjälper dig att hitta informationen du behöver innan du köper.
+    </p>
+
+    <div class="search-box">
+      <span>⌕</span>
+
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Vad vill du jämföra?"
+      >
+
+      <button onclick="search()">
+        Sök
+      </button>
+    </div>
+
+    <div class="popular">
+      <span>Populärt:</span>
+
+      <button onclick="quickSearch('Laptops')">
+        Laptops
+      </button>
+
+      <button onclick="quickSearch('Hörlurar')">
+        Hörlurar
+      </button>
+
+      <button onclick="quickSearch('Mobilabonnemang')">
+        Mobilabonnemang
+      </button>
+    </div>
+
+  </div>
+
+
+  <div class="hero-card">
+
+    <div class="card-top">
+      <span>★ Populär jämförelse</span>
+      <span>2026</span>
+    </div>
+
+    <div class="product-image">
+      💻
+    </div>
+
+    <div class="category-label">
+      TEKNIK
+    </div>
+
+    <h3>
+      Laptop för studier
+    </h3>
+
+    <p>
+      Vad ska du tänka på när du väljer laptop?
+    </p>
+
+    <div class="rating">
+      <span>★★★★★</span>
+      <span>Jämförelseguide</span>
+    </div>
+
+    <button
+      class="button full"
+      onclick="showMessage('Jämförelsen är redo att kopplas till riktiga produkter.')"
+    >
+      Se jämförelsen →
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="kategorier">
+
+  <div class="section-heading">
+
+    <div>
+      <div class="eyebrow">
+        KATEGORIER
+      </div>
+
+      <h2>
+        Vad vill du jämföra?
+      </h2>
+    </div>
+
+    <a href="#jamfor">
+      Visa alla →
+    </a>
+
+  </div>
+
+
+  <div class="categories">
+
+    <article
+      class="category"
+      onclick="quickSearch('Laptops')"
+    >
+      <div class="category-icon">💻</div>
+
+      <h3>Teknik</h3>
+
+      <p>
+        Laptops, skärmar och tillbehör
+      </p>
+    </article>
+
+
+    <article
+      class="category"
+      onclick="quickSearch('Mobilabonnemang')"
+    >
+      <div class="category-icon">📱</div>
+
+      <h3>Mobil</h3>
+
+      <p>
+        Telefoner och abonnemang
+      </p>
+    </article>
+
+
+    <article
+      class="category"
+      onclick="quickSearch('Hörlurar')"
+    >
+      <div class="category-icon">🎧</div>
+
+      <h3>Ljud</h3>
+
+      <p>
+        Hörlurar och högtalare
+      </p>
+    </article>
+
+
+    <article
+      class="category"
+      onclick="quickSearch('Hem')"
+    >
+      <div class="category-icon">🏠</div>
+
+      <h3>Hem</h3>
+
+      <p>
+        Smarta köp för hemmet
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<section class="calculator-section" id="jamfor">
+
+  <div class="calculator">
+
+    <div class="calculator-info">
+
+      <div class="eyebrow">
+        GRATIS KALKYLATOR
+      </div>
+
+      <h2>
+        Vad kostar ditt abonnemang egentligen?
+      </h2>
+
+      <p>
+        Skriv in din månadskostnad och se vad abonnemanget
+        kostar dig under ett helt år.
+      </p>
+
+    </div>
+
+
+    <div class="calculator-box">
+
+      <label>
+        Månadskostnad
+
+        <strong>
+          <span id="monthlyValue">299</span> kr
+        </strong>
+      </label>
+
+      <input
+        id="priceSlider"
+        type="range"
+        min="49"
+        max="1500"
+        value="299"
+        oninput="calculate()"
+      >
+
+      <div class="calculator-result">
+
+        <span>
+          Årskostnad
+        </span>
+
+        <strong>
+          <span id="yearlyValue">3 588</span> kr
+        </strong>
+
+      </div>
+
+      <button
+        class="button full"
+        onclick="showMessage('Nästa steg är att koppla riktiga erbjudanden.')"
+      >
+        Jämför alternativ
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section" id="guider">
+
+  <div class="section-heading">
+
+    <div>
+
+      <div class="eyebrow">
+        KÖPGUIDER
+      </div>
+
+      <h2>
+        Lär dig innan du köper
+      </h2>
+
+    </div>
+
+    <a href="#">
+      Alla guider →
+    </a>
+
+  </div>
+
+
+  <div class="guides">
+
+    <article class="guide">
+
+      <div class="guide-image">
+        💻
+      </div>
+
+      <div class="guide-content">
+
+        <div class="tag">
+          TEKNIK
+        </div>
+
+        <h3>
+          Så väljer du laptop utan att betala för mycket
+        </h3>
+
+        <p>
+          Fem saker att kontrollera innan du köper en ny laptop.
+        </p>
+
+        <a href="#" onclick="showMessage('Guidesidan kan byggas här.'); return false;">
+          Läs guiden →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article class="guide">
+
+      <div class="guide-image">
+        📱
+      </div>
+
+      <div class="guide-content">
+
+        <div class="tag">
+          MOBIL
+        </div>
+
+        <h3>
+          Vad ska ett bra mobilabonnemang kosta?
+        </h3>
+
+        <p>
+          En enkel checklista för att jämföra olika alternativ.
+        </p>
+
+        <a href="#" onclick="showMessage('Guidesidan kan byggas här.'); return false;">
+          Läs guiden →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article class="guide">
+
+      <div class="guide-image">
+        🎧
+      </div>
+
+      <div class="guide-content">
+
+        <div class="tag">
+          LJUD
+        </div>
+
+        <h3>
+          Vilka funktioner är värda pengarna?
+        </h3>
+
+        <p>
+          ANC, batteritid, komfort och andra viktiga funktioner.
+        </p>
+
+        <a href="#" onclick="showMessage('Guidesidan kan byggas här.'); return false;">
+          Läs guiden →
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<section class="newsletter">
+
+  <div>
+
+    <div class="eyebrow">
+      SMARTARE KÖP
+    </div>
+
+    <h2>
+      Få våra bästa jämförelser
+    </h2>
+
+    <p>
+      En enkel sammanställning när vi hittar något intressant.
+    </p>
+
+  </div>
+
+
+  <form onsubmit="subscribe(event)">
+
+    <input
+      type="email"
+      placeholder="Din e-postadress"
+      required
+    >
+
+    <button class="button">
+      Prenumerera
+    </button>
+
+  </form>
+
+</section>
+
+</main>
+
+
+
+<footer>
+
+  <div class="footer-brand">
+
+    <a href="#" class="logo">
+      <span class="logo-icon">S</span>
+      SmartVal
+    </a>
+
+    <p>
+      Jämförelser och guider för smartare vardagsköp.
+    </p>
+
+  </div>
+
+
+  <div class="footer-links">
+
+    <a href="#">Om oss</a>
+    <a href="#">Kontakt</a>
+    <a href="#">Integritet</a>
+    <a href="#">Cookies</a>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 SmartVal
+  </div>
+
+</footer>
+
+
+<div id="toast" class="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
