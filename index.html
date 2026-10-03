@@ -1,534 +1,384 @@
-
 <!DOCTYPE html>
+
 <html lang="sv">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>SmartVal – Hitta rätt. Betala mindre.</title>
-  <meta
-    name="description"
-    content="SmartVal hjälper dig att jämföra produkter, abonnemang och priser för smartare köp."
-  >
+
+  <meta name="description"
+
+    content="SmartVal hjälper dig att jämföra produkter och hitta smartare köp.">
 
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <header class="navbar">
-  <a href="#" class="logo">
+
+  <a href="#top" class="logo">
+
     <span class="logo-icon">S</span>
+
     SmartVal
+
   </a>
 
   <nav>
+
     <a href="#kategorier">Kategorier</a>
-    <a href="#jamfor">Jämför</a>
+
+    <a href="#laptops">Laptops</a>
+
     <a href="#guider">Guider</a>
+
   </nav>
 
-  <a href="#jamfor" class="button small">
-    Börja jämföra
-  </a>
 </header>
 
-
-<main>
+<main id="top">
 
 <section class="hero">
 
   <div class="hero-content">
 
-    <div class="eyebrow">
-      SMARTARE KÖP
-    </div>
+    <div class="eyebrow">SMARTARE KÖP</div>
 
     <h1>
+
       Hitta rätt.<br>
+
       <span>Betala mindre.</span>
+
     </h1>
 
     <p>
-      Jämför produkter, abonnemang och priser på ett enkelt sätt.
-      Vi hjälper dig att hitta informationen du behöver innan du köper.
+
+      SmartVal hjälper dig att jämföra produkter och hitta
+
+      rätt alternativ utan krångel.
+
     </p>
 
-    <div class="search-box">
-      <span>⌕</span>
+    <a href="#laptops" class="button">
 
-      <input
-        id="searchInput"
-        type="search"
-        placeholder="Vad vill du jämföra?"
-      >
+      Börja jämföra
 
-      <button onclick="search()">
-        Sök
-      </button>
-    </div>
-
-    <div class="popular">
-      <span>Populärt:</span>
-
-      <button onclick="quickSearch('Laptops')">
-        Laptops
-      </button>
-
-      <button onclick="quickSearch('Hörlurar')">
-        Hörlurar
-      </button>
-
-      <button onclick="quickSearch('Mobilabonnemang')">
-        Mobilabonnemang
-      </button>
-    </div>
+    </a>
 
   </div>
 
-
   <div class="hero-card">
 
-    <div class="card-top">
-      <span>★ Populär jämförelse</span>
-      <span>2026</span>
-    </div>
+    <div class="product-image">💻</div>
 
-    <div class="product-image">
-      💻
-    </div>
+    <div class="category-label">POPULÄR</div>
 
-    <div class="category-label">
-      TEKNIK
-    </div>
-
-    <h3>
-      Laptop för studier
-    </h3>
+    <h3>Laptop för studier</h3>
 
     <p>
-      Vad ska du tänka på när du väljer laptop?
+
+      Se några populära laptops och jämför pris och specifikationer.
+
     </p>
 
-    <div class="rating">
-      <span>★★★★★</span>
-      <span>Jämförelseguide</span>
-    </div>
+    <a href="#laptops" class="button full">
 
-    <button
-      class="button full"
-      onclick="showMessage('Jämförelsen är redo att kopplas till riktiga produkter.')"
-    >
       Se jämförelsen →
-    </button>
+
+    </a>
 
   </div>
 
 </section>
 
-
 <section class="section" id="kategorier">
 
-  <div class="section-heading">
+  <div class="eyebrow">KATEGORIER</div>
 
-    <div>
-      <div class="eyebrow">
-        KATEGORIER
-      </div>
-
-      <h2>
-        Vad vill du jämföra?
-      </h2>
-    </div>
-
-    <a href="#jamfor">
-      Visa alla →
-    </a>
-
-  </div>
-
+  <h2>Vad vill du jämföra?</h2>
 
   <div class="categories">
 
-    <article
-      class="category"
-      onclick="quickSearch('Laptops')"
-    >
+    <a class="category" href="#laptops">
+
       <div class="category-icon">💻</div>
 
       <h3>Teknik</h3>
 
-      <p>
-        Laptops, skärmar och tillbehör
-      </p>
-    </article>
+      <p>Laptops och datorer</p>
 
+    </a>
 
-    <article
-      class="category"
-      onclick="quickSearch('Mobilabonnemang')"
-    >
+    <a class="category" href="#laptops">
+
       <div class="category-icon">📱</div>
 
       <h3>Mobil</h3>
 
-      <p>
-        Telefoner och abonnemang
-      </p>
-    </article>
+      <p>Telefoner och abonnemang</p>
 
+    </a>
 
-    <article
-      class="category"
-      onclick="quickSearch('Hörlurar')"
-    >
+    <a class="category" href="#laptops">
+
       <div class="category-icon">🎧</div>
 
       <h3>Ljud</h3>
 
-      <p>
-        Hörlurar och högtalare
-      </p>
-    </article>
+      <p>Hörlurar och högtalare</p>
 
+    </a>
 
-    <article
-      class="category"
-      onclick="quickSearch('Hem')"
-    >
+    <a class="category" href="#laptops">
+
       <div class="category-icon">🏠</div>
 
       <h3>Hem</h3>
 
-      <p>
-        Smarta köp för hemmet
-      </p>
-    </article>
+      <p>Smarta köp för hemmet</p>
 
-  </div>
-
-</section>
-
-
-<section class="section laptop-comparison" id="laptops">
-
-  <div class="section-heading">
-    <div>
-      <div class="eyebrow">LAPTOPJÄMFÖRELSE</div>
-
-      <h2>Laptop för studier och vardagsbruk</h2>
-
-      <p class="comparison-intro">
-        Jämför pris, storlek, minne och lagring innan du köper.
-      </p>
-    </div>
-  </div>
-
-  <div class="comparison-note">
-    Priser kontrollerade oktober 2026. Priser kan ändras.
-  </div>
-
-  <div class="laptop-table">
-
-    <div class="laptop-row laptop-header">
-      <div>Modell</div>
-      <div>Pris från</div>
-      <div>RAM</div>
-      <div>Lagring</div>
-      <div></div>
-    </div>
-
-    <div class="laptop-row">
-      <div>
-        <strong>Apple MacBook Neo</strong>
-        <span>13 tum · A18 Pro</span>
-      </div>
-
-      <div class="price">8 995 kr</div>
-      <div>8 GB</div>
-      <div>256 GB SSD</div>
-
-      <div>
-        <a
-          class="compare-button"
-          href="https://www.apple.com/se/shop/buy-mac/macbook-neo"
-          target="_blank"
-          rel="noopener"
-        >
-          Se pris
-        </a>
-      </div>
-    </div>
-
-
-    <div class="laptop-row">
-      <div>
-        <strong>Acer Aspire Lite 15</strong>
-        <span>15,6 tum · Ryzen 3</span>
-      </div>
-
-      <div class="price">4 990 kr</div>
-      <div>8 GB</div>
-      <div>512 GB SSD</div>
-
-      <div>
-        <a
-          class="compare-button"
-          href="https://www.prisjakt.nu/produkt.php?p=16327601"
-          target="_blank"
-          rel="noopener"
-        >
-          Se pris
-        </a>
-      </div>
-    </div>
-
-
-    <div class="laptop-row">
-      <div>
-        <strong>Lenovo IdeaPad Slim 3</strong>
-        <span>16 tum · Ryzen 5</span>
-      </div>
-
-      <div class="price">7 990 kr</div>
-      <div>16 GB</div>
-      <div>512 GB SSD</div>
-
-      <div>
-        <a
-          class="compare-button"
-          href="https://www.prisjakt.nu/produkt.php?p=15538345"
-          target="_blank"
-          rel="noopener"
-        >
-          Se pris
-        </a>
-      </div>
-    </div>
-
-
-    <div class="laptop-row">
-      <div>
-        <strong>ASUS Vivobook 16</strong>
-        <span>16 tum · Ryzen AI 5</span>
-      </div>
-
-      <div class="price">6 990 kr</div>
-      <div>16 GB</div>
-      <div>512 GB SSD</div>
-
-      <div>
-        <a
-          class="compare-button"
-          href="https://www.prisjakt.nu/c/laptops-barbara-datorer?brand=518"
-          target="_blank"
-          rel="noopener"
-        >
-          Se pris
-        </a>
-      </div>
-    </div>
-
-
-    <div class="laptop-row">
-      <div>
-        <strong>ASUS Chromebook Plus</strong>
-        <span>15,6 tum · Core 3</span>
-      </div>
-
-      <div class="price">5 189 kr</div>
-      <div>8 GB</div>
-      <div>128 GB SSD</div>
-
-      <div>
-        <a
-          class="compare-button"
-          href="https://www.prisjakt.nu/produkt.php?p=14807875"
-          target="_blank"
-          rel="noopener"
-        >
-          Se pris
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-<section class="calculator-section" id="jamfor">
-
-  <div class="calculator">
-
-    <div class="calculator-info">
-
-      <div class="eyebrow">
-        GRATIS KALKYLATOR
-      </div>
-
-      <h2>
-        Vad kostar ditt abonnemang egentligen?
-      </h2>
-
-      <p>
-        Skriv in din månadskostnad och se vad abonnemanget
-        kostar dig under ett helt år.
-      </p>
-
-    </div>
-
-
-    <div class="calculator-box">
-
-      <label>
-        Månadskostnad
-
-        <strong>
-          <span id="monthlyValue">299</span> kr
-        </strong>
-      </label>
-
-      <input
-        id="priceSlider"
-        type="range"
-        min="49"
-        max="1500"
-        value="299"
-        oninput="calculate()"
-      >
-
-      <div class="calculator-result">
-
-        <span>
-          Årskostnad
-        </span>
-
-        <strong>
-          <span id="yearlyValue">3 588</span> kr
-        </strong>
-
-      </div>
-
-      <button
-        class="button full"
-        onclick="showMessage('Nästa steg är att koppla riktiga erbjudanden.')"
-      >
-        Jämför alternativ
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section class="section" id="guider">
-
-  <div class="section-heading">
-
-    <div>
-
-      <div class="eyebrow">
-        KÖPGUIDER
-      </div>
-
-      <h2>
-        Lär dig innan du köper
-      </h2>
-
-    </div>
-
-    <a href="#">
-      Alla guider →
     </a>
 
   </div>
 
+</section>
+
+<section class="section laptop-comparison" id="laptops">
+
+  <div class="eyebrow">LAPTOPJÄMFÖRELSE</div>
+
+  <h2>Laptops för studier och vardagsbruk</h2>
+
+  <p class="comparison-intro">
+
+    Här är några alternativ att jämföra. Priser kan ändras,
+
+    så kontrollera alltid aktuellt pris hos återförsäljaren.
+
+  </p>
+
+  <div class="laptop-table">
+
+    <div class="laptop-row">
+
+      <div>
+
+        <strong>Apple MacBook Neo</strong>
+
+        <span>13 tum · A18 Pro · 8 GB · 256 GB SSD</span>
+
+      </div>
+
+      <div class="price">8 995 kr</div>
+
+      <a
+
+        class="compare-button"
+
+        href="https://www.apple.com/se/shop/buy-mac/macbook-neo"
+
+        target="_blank"
+
+        rel="noopener">
+
+        Se pris
+
+      </a>
+
+    </div>
+
+    <div class="laptop-row">
+
+      <div>
+
+        <strong>Acer Aspire Lite 15</strong>
+
+        <span>15,6 tum · Ryzen 3 · 8 GB · 512 GB SSD</span>
+
+      </div>
+
+      <div class="price">4 990 kr</div>
+
+      <a
+
+        class="compare-button"
+
+        href="https://www.prisjakt.nu/produkt.php?p=16327601"
+
+        target="_blank"
+
+        rel="noopener">
+
+        Se pris
+
+      </a>
+
+    </div>
+
+    <div class="laptop-row">
+
+      <div>
+
+        <strong>Lenovo IdeaPad Slim 3</strong>
+
+        <span>16 tum · Ryzen 5 · 16 GB · 512 GB SSD</span>
+
+      </div>
+
+      <div class="price">7 990 kr</div>
+
+      <a
+
+        class="compare-button"
+
+        href="https://www.prisjakt.nu/produkt.php?p=15538345"
+
+        target="_blank"
+
+        rel="noopener">
+
+        Se pris
+
+      </a>
+
+    </div>
+
+    <div class="laptop-row">
+
+      <div>
+
+        <strong>ASUS Vivobook 16</strong>
+
+        <span>16 tum · Ryzen AI 5 · 16 GB · 512 GB SSD</span>
+
+      </div>
+
+      <div class="price">6 990 kr</div>
+
+      <a
+
+        class="compare-button"
+
+        href="https://www.prisjakt.nu/c/laptops-barbara-datorer?brand=518"
+
+        target="_blank"
+
+        rel="noopener">
+
+        Se pris
+
+      </a>
+
+    </div>
+
+    <div class="laptop-row">
+
+      <div>
+
+        <strong>ASUS Chromebook Plus</strong>
+
+        <span>15,6 tum · Core 3 · 8 GB · 128 GB SSD</span>
+
+      </div>
+
+      <div class="price">5 189 kr</div>
+
+      <a
+
+        class="compare-button"
+
+        href="https://www.prisjakt.nu/produkt.php?p=14807875"
+
+        target="_blank"
+
+        rel="noopener">
+
+        Se pris
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="guider">
+
+  <div class="eyebrow">KÖPGUIDER</div>
+
+  <h2>Smarta tips innan du köper</h2>
 
   <div class="guides">
 
     <article class="guide">
 
-      <div class="guide-image">
-        💻
-      </div>
+      <div class="guide-image">💻</div>
 
       <div class="guide-content">
 
-        <div class="tag">
-          TEKNIK
-        </div>
+        <div class="tag">TEKNIK</div>
 
-        <h3>
-          Så väljer du laptop utan att betala för mycket
-        </h3>
+        <h3>Så väljer du rätt laptop</h3>
 
         <p>
-          Fem saker att kontrollera innan du köper en ny laptop.
-        </p>
 
-        <a href="#" onclick="showMessage('Guidesidan kan byggas här.'); return false;">
-          Läs guiden →
-        </a>
+          Titta framför allt på processor, RAM,
+
+          lagring och batteritid.
+
+        </p>
 
       </div>
 
     </article>
 
-
     <article class="guide">
 
-      <div class="guide-image">
-        📱
-      </div>
+      <div class="guide-image">💰</div>
 
       <div class="guide-content">
 
-        <div class="tag">
-          MOBIL
-        </div>
+        <div class="tag">PRIS</div>
 
-        <h3>
-          Vad ska ett bra mobilabonnemang kosta?
-        </h3>
+        <h3>Jämför alltid priset</h3>
 
         <p>
-          En enkel checklista för att jämföra olika alternativ.
-        </p>
 
-        <a href="#" onclick="showMessage('Guidesidan kan byggas här.'); return false;">
-          Läs guiden →
-        </a>
+          Priser kan skilja sig mycket mellan olika
+
+          återförsäljare.
+
+        </p>
 
       </div>
 
     </article>
 
-
     <article class="guide">
 
-      <div class="guide-image">
-        🎧
-      </div>
+      <div class="guide-image">⭐</div>
 
       <div class="guide-content">
 
-        <div class="tag">
-          LJUD
-        </div>
+        <div class="tag">SMART KÖP</div>
 
-        <h3>
-          Vilka funktioner är värda pengarna?
-        </h3>
+        <h3>Köp efter behov</h3>
 
         <p>
-          ANC, batteritid, komfort och andra viktiga funktioner.
-        </p>
 
-        <a href="#" onclick="showMessage('Guidesidan kan byggas här.'); return false;">
-          Läs guiden →
-        </a>
+          Den dyraste produkten är inte alltid den
+
+          bästa för just dig.
+
+        </p>
 
       </div>
 
@@ -537,85 +387,57 @@
   </div>
 
 </section>
-
-
 
 <section class="newsletter">
 
   <div>
 
-    <div class="eyebrow">
-      SMARTARE KÖP
-    </div>
+    <div class="eyebrow">SMARTVAL</div>
 
-    <h2>
-      Få våra bästa jämförelser
-    </h2>
+    <h2>Smarta jämförelser på ett ställe</h2>
 
     <p>
-      En enkel sammanställning när vi hittar något intressant.
+
+      Vi bygger SmartVal för att göra det enklare
+
+      att hitta rätt produkt.
+
     </p>
 
   </div>
-
-
-  <form onsubmit="subscribe(event)">
-
-    <input
-      type="email"
-      placeholder="Din e-postadress"
-      required
-    >
-
-    <button class="button">
-      Prenumerera
-    </button>
-
-  </form>
 
 </section>
 
 </main>
 
-
-
 <footer>
 
   <div class="footer-brand">
 
-    <a href="#" class="logo">
+    <a href="#top" class="logo">
+
       <span class="logo-icon">S</span>
+
       SmartVal
+
     </a>
 
     <p>
-      Jämförelser och guider för smartare vardagsköp.
+
+      Jämförelser och guider för smartare köp.
+
     </p>
 
   </div>
 
-
-  <div class="footer-links">
-
-    <a href="#">Om oss</a>
-    <a href="#">Kontakt</a>
-    <a href="#">Integritet</a>
-    <a href="#">Cookies</a>
-
-  </div>
-
-
   <div class="copyright">
+
     © 2026 SmartVal
+
   </div>
 
 </footer>
 
-
-<div id="toast" class="toast"></div>
-
-
-<script src="script.js"></script>
-
 </body>
+
 </html>
